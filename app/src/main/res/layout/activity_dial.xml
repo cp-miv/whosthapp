@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="tk.mbird.whosthapp.ui.dial.DialViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/my_custom_background"
+        tools:context=".ui.dial.DialActivity">
+
+        <LinearLayout
+            android:id="@+id/pnlActions"
+            android:layout_width="wrap_content"
+            android:layout_height="128dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btnCall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_whatsapp"
+                android:text="WhatsApp" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/btnCountryPrefix"
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                app:imageResource="@{viewModel.selectedCountry.image}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <tk.mbird.whosthapp.view.CutCopyPasteEditText
+                android:id="@+id/txtPhoneNumber"
+                style="@style/DialNumberTheme"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:inputType="text"
+                android:scrollbars="horizontal"
+                android:text="@{viewModel.phoneNumber}"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnBackspace"
+                app:layout_constraintStart_toEndOf="@+id/btnCountryPrefix"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btnBackspace"
+                style="@style/DialButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_backspace_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btnDial00"
+                    style="@style/DialButtonTheme" />
+
+                <Button
+                    android:id="@+id/btnDial01"
+                    style="@style/DialButtonTheme" />
+
+                <Button
+                    android:id="@+id/btnDial02"
+                    style="@style/DialButtonTheme" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btnDial03"
+                    style="@style/DialButtonTheme" />
+
+                <Button
+                    android:id="@+id/btnDial04"
+                    style="@style/DialButtonTheme" />
+
+                <Button
+                    android:id="@+id/btnDial05"
+                    style="@style/DialButtonTheme" />
+
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btnDial06"
+                    style="@style/DialButtonTheme" />
+
+                <Button
+                    android:id="@+id/btnDial07"
+                    style="@style/DialButtonTheme" />
+
+                <Button
+                    android:id="@+id/btnDial08"
+                    style="@style/DialButtonTheme" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btnDial09"
+                    style="@style/DialButtonTheme" />
+
+                <Button
+                    android:id="@+id/btnDial10"
+                    style="@style/DialButtonTheme" />
+
+                <Button
+                    android:id="@+id/btnDial11"
+                    style="@style/DialButtonTheme" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
